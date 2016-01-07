@@ -1,0 +1,22 @@
+========================
+ Christofides Algorithm
+========================
+
+The Christofides algorithm is an algorithm for finding approximate solutions to the travelling salesman problem, on instances where the distances form a metric space (they are symmetric and obey the triangle inequality). It is an approximation algorithm that guarantees that its solutions will be within a factor of 3/2 of the optimal solution length, and is named after Nicos Christofides, who published it in 1976. As of 2015, this is the best approximation ratio that has been proven for the traveling salesman problem on general metric spaces, although better approximations are known for some special cases.
+
+Algorithm
+=========
+
+Let G = (V,w) be an instance of the travelling salesman problem. That is, G is a complete graph on the set V of vertices, and the function w assigns a nonnegative real weight to every edge of G. According to the triangle inequality, for every three vertices u, v, and x, it should be the case that 
+w(uv) + w(vx) ≥ w(ux).
+
+Then the algorithm can be described in pseudocode as follows.
+
+1) Create a minimum spanning tree T of G.
+2) Let O be the set of vertices with odd degree in T. By the handshaking lemma, O has an even number of vertices.
+3) Find a minimum-weight perfect matching M in the induced subgraph given by the vertices from O.
+4) Combine the edges of M and T to form a connected multigraph H in which each vertex has even degree.
+5) Form an Eulerian circuit in H.
+6) Make the circuit found in previous step into a Hamiltonian circuit by skipping repeated vertices (shortcutting).
+
+
