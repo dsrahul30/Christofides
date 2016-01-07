@@ -10,12 +10,12 @@ The Distance from a node on to itself is assumed 0.
 Usage
 ======
 
-Use the compute() function which takes as input a distance_matrix and returns a Christofides solution as follows::
+Use the compute() function which takes as input a distance_matrix and returns a Christofides solution as follows:
 
 	from Christofides import christofides
 	TSP = christofides.compute(distance_matrix)
 
-or::
+or:
 
 	import Christofides
 	TSP = Christofides.christofides.compute(distance_matrix)
@@ -23,7 +23,7 @@ or::
 The Distance Matrix is an upper Triangular matrix with distance from a node on to itself 0, since Christofides algorithm 
 could only be applied for undirected graphs. Also the distance between a node on to itself is practically 0.
 Example for distance_matrix is as follows,
-distance_matrix = ::
+distance_matrix = :
 
 	[[0,45,65,15],
 	 [0,0,56,12],
@@ -31,7 +31,7 @@ distance_matrix = ::
 	 [0,0,0,0]] 
 	 
 The above distance_matrix should be provided as an input to christofides.compute(), when we want to calculate TSP for
-distance = ::
+distance = :
 	
 	[[0,45,65,15],
 	[45,0,56,12],
