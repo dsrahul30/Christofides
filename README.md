@@ -14,11 +14,6 @@ Use the compute() function which takes as input a distance_matrix and returns a 
 
 	from Christofides import christofides
 	TSP = christofides.compute(distance_matrix)
-
-or:
-
-	import Christofides
-	TSP = Christofides.christofides.compute(distance_matrix)
 	
 The Distance Matrix is an upper Triangular matrix with distance from a node on to itself 0, since Christofides algorithm 
 could only be applied for undirected graphs. Also the distance between a node on to itself is practically 0.
@@ -77,8 +72,13 @@ Support Functions in christofides
 	
 Install
 =======
+Download Package and Install using:
 
-python setup.py install
+	python setup.py install
+
+or:
+
+	pip install Christofides
 	
 Additional Packages
 ===================
