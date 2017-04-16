@@ -9,6 +9,7 @@ import copy
 import itertools
 from operator import itemgetter
 import graph
+import time
 
 def _csr_gen_triples(A):
 	"""Converts a SciPy sparse matrix in **Compressed Sparse Row** format to
@@ -174,8 +175,15 @@ def compute(M):
 			}
 
 if __name__ == "__main__":
+	print 'Testing...'
+	start = time.time()
 	distance_matrix = graph.distance_matrix
 	Approximation =  compute(distance_matrix)
-	print '\n1.5 Approximation of TSP (Christofide\'s algorithm):', Approximation['Christofides_Solution']
+	end = time.time()-start
+	print 'Computation Successful...'
+	print 'Distance Matrix:\n'
+	print graph.distance_matrix
+	print '\n1.5 Approximation of TSP (Christofide\'s algorithm):\n', Approximation['Christofides_Solution']
 	print 'Travel Cost:', Approximation['Travel_Cost']
+	print 'Computation Time:', end
 	print ''
